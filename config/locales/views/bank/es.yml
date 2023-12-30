@@ -1,0 +1,9 @@
+es:
+  helpers:
+    submit:
+      bank:
+        create: "Guardar %{model}"
+    success:
+      destroyed: "%{model} creado con éxito"
+  banks: "Bancos"
+  bank: "Banco"

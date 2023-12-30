@@ -25,7 +25,7 @@ class BanksController < ApplicationController
 
     respond_to do |format|
       if @bank.save
-        format.html { redirect_to bank_url(@bank), notice: "Bank was successfully created." }
+        format.html { redirect_to bank_url(@bank), notice: successful_message(:bank, :created) }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -36,7 +36,7 @@ class BanksController < ApplicationController
   def update
     respond_to do |format|
       if @bank.update(bank_params)
-        format.html { redirect_to bank_url(@bank), notice: "Bank was successfully updated." }
+        format.html { redirect_to bank_url(@bank), notice: successful_message(:bank, :updated) }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -48,7 +48,7 @@ class BanksController < ApplicationController
     @bank.destroy
 
     respond_to do |format|
-      format.html { redirect_to banks_url, notice: "Bank was successfully destroyed." }
+      format.html { redirect_to banks_url, notice: successful_message(:bank, :deleted) }
     end
   end
 

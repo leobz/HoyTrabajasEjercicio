@@ -1,0 +1,17 @@
+es:
+  activerecord:
+    models:
+      bank:
+        one: 'Banco'
+        other: 'Bancos'
+    attributes:
+      bank:
+        name: 'Nombre'
+    errors:
+      models:
+        bank:
+          attributes:
+            name:
+              blank: 'Campo requerido'
+              too_long: 'Cantidad máxima de caracteres: 50'
+              taken: 'Nombre ya existe'
