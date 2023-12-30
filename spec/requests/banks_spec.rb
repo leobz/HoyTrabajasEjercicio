@@ -38,6 +38,17 @@ RSpec.describe "Banks Requests", type: :request do
       expect(Bank.last).to eq(assigns(:bank))
       expect(Bank.last.name).to eq("My bank")
     end
+
+    it "fails with a bank name greater than 50 chars" do
+      invalid_long_name = 'a' * 51
+
+      expect {
+        post banks_url, params: {bank: {name: invalid_long_name}}
+      }.not_to change(Bank, :count) # Ensure that the Bank count doesn't change
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response.body).to include("Name is too long (maximum is 50 characters)")
+    end
   end
 
   describe "PUT #update" do
