@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= t(:banks) %></h1>
+
+<div id="banks">
+  <% @banks.each do |bank| %>
+    <%= render bank %>
+    <p>
+      <%= link_to t(:show), bank %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to t(:new), new_bank_path %>
