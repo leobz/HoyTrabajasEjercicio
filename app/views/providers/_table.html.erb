@@ -1,0 +1,29 @@
+
+<% if @providers.size > 0%>
+  <table>
+    <tr>
+      <th><%= t(:name) %></th>
+      <th><%= t(:nit) %></th>
+      <th><%= t(:contact_name) %></th>
+      <th><%= t(:contact_phone) %></th>
+      <th><%= t(:bank_name) %></th>
+      <th><%= t(:account_number) %></th>
+    </tr>
+
+    <% @providers.each do |p| %>
+      <tr>
+        <td><%= p.name %></td>
+        <td><%= p.nit %></td>
+        <td><%= p.contact_name %></td>
+        <td><%= p.contact_phone %></td>
+        <td><%= p.bank_name %></td>
+        <td><%= p.account_number %></td>
+        <td><%= button_to t(:show), p, method: :get %></td>
+        <td><%= button_to t(:edit), edit_bank_path(p), method: :get %></td>
+        <td><%= button_to t(:delete), p, method: :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  Sin información en la tabla
+<% end%>
