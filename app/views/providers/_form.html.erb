@@ -11,6 +11,11 @@
   </div>
 
   <div>
+    <%= form.label :nit, style: "display: block" %>
+    <%= form.text_field :nit %>
+  </div>
+
+  <div>
     <%= form.label :contact_name, style: "display: block" %>
     <%= form.text_field :contact_name %>
   </div>
@@ -21,14 +26,10 @@
   </div>
 
   <div>
-    <%= form.label :bank, style: "display: block" %>
+    <%= form.label :bank_name, style: "display: block" %>
     <%= form.select :bank_id, options_for_select(Bank.all.map { |bank| [bank.name, bank.id] }, provider.bank_id) , {prompt: true} %>
   </div>
 
-  <div>
-    <%= form.label :nit, style: "display: block" %>
-    <%= form.text_field :nit %>
-  </div>
 
   <div>
     <%= form.label :account_number, style: "display: block" %>

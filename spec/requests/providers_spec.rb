@@ -71,7 +71,7 @@ RSpec.describe "Provider Requests", type: :request do
       }.not_to change(Provider, :count) # Ensure that the Provider count doesn't change
 
       expect(response).to have_http_status(:unprocessable_entity)
-      #expect(response.body).not_to include("Translation missing")
+      expect(response.body).not_to include("Translation missing")
       expect(response.body).to include("invalid")
 
       #*******   Provider contact_name is nil   *******#
@@ -81,7 +81,7 @@ RSpec.describe "Provider Requests", type: :request do
       }.not_to change(Provider, :count) # Ensure that the Provider count doesn't change
 
       expect(response).to have_http_status(:unprocessable_entity)
-      #expect(response.body).not_to include("Translation missing")
+      expect(response.body).not_to include("Translation missing")
       expect(response.body).to include("invalid")
 
       #*******   Provider contact_phone greater than 10 chars   *******#
@@ -92,7 +92,7 @@ RSpec.describe "Provider Requests", type: :request do
       }.not_to change(Provider, :count) # Ensure that the Provider count doesn't change
 
       expect(response).to have_http_status(:unprocessable_entity)
-      #expect(response.body).not_to include("Translation missing")
+      expect(response.body).not_to include("Translation missing")
       expect(response.body).to include("invalid")
 
       #*******   Provider account_number greater than 15 chars   *******#
@@ -103,7 +103,7 @@ RSpec.describe "Provider Requests", type: :request do
       }.not_to change(Provider, :count) # Ensure that the Provider count doesn't change
 
       expect(response).to have_http_status(:unprocessable_entity)
-      #expect(response.body).not_to include("Translation missing")
+      expect(response.body).not_to include("Translation missing")
       expect(response.body).to include("invalid")
 
       #*******   Provider name is nil   *******#
@@ -114,7 +114,7 @@ RSpec.describe "Provider Requests", type: :request do
       }.not_to change(Provider, :count) # Ensure that the Provider count doesn't change
 
       expect(response).to have_http_status(:unprocessable_entity)
-      #expect(response.body).not_to include("Translation missing")
+      expect(response.body).not_to include("Translation missing")
       expect(response.body).to include("invalid")
 
 
@@ -126,7 +126,7 @@ RSpec.describe "Provider Requests", type: :request do
       }.not_to change(Provider, :count) # Ensure that the Provider count doesn't change
 
       expect(response).to have_http_status(:unprocessable_entity)
-      #expect(response.body).not_to include("Translation missing")
+      expect(response.body).not_to include("Translation missing")
       expect(response.body).to include("invalid")
     end
   end

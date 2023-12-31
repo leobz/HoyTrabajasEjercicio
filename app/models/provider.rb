@@ -1,5 +1,5 @@
 class Provider < ApplicationRecord
-  validates :nit, format: { with: /[0-9]{9}-[0-9]?/}
+  validates :nit, presence: true, format: { with: /[0-9]{9}-[0-9]?/}
   validates :name, presence: true
   validates :bank_id, presence: true
   validates :contact_name, presence: true

@@ -1,0 +1,31 @@
+es:
+  activerecord:
+    models:
+      provider:
+        one: 'Proveedor'
+        other: 'Proveedores'
+    attributes:
+      provider:
+        name: 'Nombre'
+        nit: 'NIT'
+        contact_name: 'Nombre de la persona de contacto'
+        contact_phone: 'Teléfono de la persona de contacto'
+        bank_name: 'Banco'
+        account_number: 'Número de cuenta bancaria'
+    errors:
+      models:
+        provider:
+          attributes:
+            name:
+              blank: 'Campo requerido'
+            nit:
+              blank: 'Campo requerido'
+              invalid: 'Formato inválido'
+            bank_id:
+              blank: 'Campo requerido'
+            contact_name:
+              blank: 'Campo requerido'
+            contact_phone:
+              too_long: 'Cantidad máxima de caracteres: 10'
+            account_number:
+              too_long: 'Cantidad máxima de caracteres: 15'
