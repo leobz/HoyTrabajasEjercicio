@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_30_042025) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_30_214354) do
   create_table "banks", force: :cascade do |t|
     t.string "name"
   end
 
+  create_table "providers", force: :cascade do |t|
+    t.string "nit"
+    t.string "name"
+    t.string "contact_name"
+    t.string "contact_phone"
+    t.integer "bank_id"
+    t.string "account_number"
+  end
+
+  add_foreign_key "providers", "banks"
 end
