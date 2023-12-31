@@ -2,13 +2,11 @@
 
 <h1><%= t(:providers) %></h1>
 
-<div id="providers">
-  <% @providers.each do |provider| %>
-    <%= render provider %>
-    <p>
-      <%= link_to t(:show), provider %>
-    </p>
-  <% end %>
-</div>
-
 <%= link_to t(:new), new_provider_path %>
+<p>
+<div id="providers">
+  <%= render "table", providers: @providers %>
+</div>
+<p>
+
+<%= paginate @providers %>
