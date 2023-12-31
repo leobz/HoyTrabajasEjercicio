@@ -62,6 +62,6 @@ class ProvidersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def provider_params
-      params.require(:provider).permit(:nit, :name, :contact_name, :contact_phone, :bank, :account_number)
+      params.require(:provider).permit(:nit, :name, :contact_name, :contact_phone, :bank_id, :account_number)
     end
 end

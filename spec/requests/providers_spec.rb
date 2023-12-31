@@ -10,8 +10,8 @@ RSpec.describe "Provider Requests", type: :request do
       nit: "901362343-4",
       name: "Provider",
       contact_name: "Jhon",
-      contact_phone: "+111111",
-      account_number: "111111",
+      contact_phone: nil, # optional field
+      account_number: nil, # optional field
       bank_id: @bank.id
     }
   }
@@ -60,6 +60,74 @@ RSpec.describe "Provider Requests", type: :request do
       # Translation asserts
       follow_redirect!
       expect(response.body).not_to include("Translation missing")
+    end
+
+    it "fails with invalid params" do
+      #*******   Provider NIC invalid   *******#
+      invalid_params = valid_attributes.merge(nit: "invalid")
+
+      expect {
+        post providers_url, params: {provider: invalid_params}
+      }.not_to change(Provider, :count) # Ensure that the Provider count doesn't change
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      #expect(response.body).not_to include("Translation missing")
+      expect(response.body).to include("invalid")
+
+      #*******   Provider contact_name is nil   *******#
+      invalid_params = valid_attributes.merge(contact_name: nil)
+      expect {
+        post providers_url, params: {provider: invalid_params}
+      }.not_to change(Provider, :count) # Ensure that the Provider count doesn't change
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      #expect(response.body).not_to include("Translation missing")
+      expect(response.body).to include("invalid")
+
+      #*******   Provider contact_phone greater than 10 chars   *******#
+      invalid_params = valid_attributes.merge(contact_phone: '1' * 11)
+
+      expect {
+        post providers_url, params: {provider: invalid_params}
+      }.not_to change(Provider, :count) # Ensure that the Provider count doesn't change
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      #expect(response.body).not_to include("Translation missing")
+      expect(response.body).to include("invalid")
+
+      #*******   Provider account_number greater than 15 chars   *******#
+      invalid_params = valid_attributes.merge(account_number: '1' * 16)
+
+      expect {
+        post providers_url, params: {provider: invalid_params}
+      }.not_to change(Provider, :count) # Ensure that the Provider count doesn't change
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      #expect(response.body).not_to include("Translation missing")
+      expect(response.body).to include("invalid")
+
+      #*******   Provider name is nil   *******#
+      invalid_params = valid_attributes.merge(name: nil)
+
+      expect {
+        post providers_url, params: {provider: invalid_params}
+      }.not_to change(Provider, :count) # Ensure that the Provider count doesn't change
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      #expect(response.body).not_to include("Translation missing")
+      expect(response.body).to include("invalid")
+
+
+      #*******   Provider bank is nil   *******#
+      invalid_params = valid_attributes.merge(bank_id: nil)
+
+      expect {
+        post providers_url, params: {provider: invalid_params}
+      }.not_to change(Provider, :count) # Ensure that the Provider count doesn't change
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      #expect(response.body).not_to include("Translation missing")
+      expect(response.body).to include("invalid")
     end
   end
 
