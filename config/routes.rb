@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :banks
-  resources :providers
+  resources :providers do
+    get '/page/:page', action: :index, on: :collection
+  end
 end

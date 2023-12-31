@@ -1,4 +1,6 @@
 class Provider < ApplicationRecord
+  paginates_per 10
+
   validates :nit, presence: true, format: { with: /[0-9]{9}-[0-9]?/}
   validates :name, presence: true
   validates :bank_id, presence: true

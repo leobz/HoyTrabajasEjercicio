@@ -3,7 +3,7 @@ class ProvidersController < ApplicationController
 
   # GET /providers
   def index
-    @providers = Provider.all
+    @providers = Provider.all.page params[:page]
   end
 
   # GET /providers/1
