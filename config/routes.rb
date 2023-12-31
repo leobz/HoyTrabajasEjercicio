@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :banks
+  resources :providers
 end
