@@ -22,7 +22,7 @@
 
   <div>
     <%= form.label :bank, style: "display: block" %>
-    <%= form.text_field :bank_id %>
+    <%= form.select :bank_id, options_for_select(Bank.all.map { |bank| [bank.name, bank.id] }, provider.bank_id) , {prompt: true} %>
   </div>
 
   <div>

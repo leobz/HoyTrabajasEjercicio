@@ -5,4 +5,8 @@ class Provider < ApplicationRecord
   validates :contact_name, presence: true
   validates :contact_phone, length: { maximum: 10 }
   validates :account_number, length: { maximum: 15 }
+
+  def bank_name
+    Bank.find(self.bank_id).name
+  end
 end
