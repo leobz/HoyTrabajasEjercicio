@@ -1,0 +1,10 @@
+<h1><%= t(:edit) + " " + t(:provider) %></h1>
+
+<%= render "form", provider: @provider %>
+
+<br>
+
+<div>
+  <%= link_to t(:show), @provider %> |
+  <%= link_to t(:back), providers_path %>
+</div>

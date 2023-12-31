@@ -3,6 +3,7 @@ es:
     submit:
       bank:
         create: "Guardar %{model}"
+        update: "Actualizar %{model}"
     success:
       destroyed: "%{model} creado con éxito"
   banks: "Bancos"

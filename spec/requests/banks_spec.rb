@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Banks Requests", type: :request do
+RSpec.describe "Bank Requests", type: :request do
   let(:valid_attributes) {{name: "My bank"}}
 
   describe "GET #index" do
