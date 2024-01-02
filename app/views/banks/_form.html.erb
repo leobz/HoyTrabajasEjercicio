@@ -1,4 +1,6 @@
-<%= form_with(model: bank) do |form| %>
+<%= form_with(model: bank, class: "resource-form centered-15") do |form| %>
+  <h2><%= "#{t(action)} #{t(:bank)}"%></h2>
+
   <% if bank.errors.any? %>
     <div style="color: red">
       <h2><%= t(:something_went_wrong)%></h2>
@@ -11,6 +13,13 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary active" %>
+  </div>
+
+  <div>
+    <% if action == :edit %>
+      <%= link_to t(:show), @bank %> |
+    <% end %>
+    <%= link_to t(:back), banks_path %>
   </div>
 <% end %>

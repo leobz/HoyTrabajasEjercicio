@@ -1,7 +1,15 @@
+<div class="resource-form centered-15">
 <div id="<%= dom_id bank %>">
   <p>
     <strong><%= t(:name) %>:</strong>
     <%= bank.name %>
   </p>
 
+</div>
+
+<div>
+  <%= link_to t(:edit), edit_bank_path(@bank) %> |
+  <%= link_to t(:back), banks_path %><br><br>
+  <%= button_to t(:delete), @bank, method: :delete, class: "btn btn-danger btn-sm" %>
+</div>
 </div>

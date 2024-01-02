@@ -1,10 +1,1 @@
-<h1><%= t(:edit) + " " + t(:bank) %></h1>
-
-<%= render "form", bank: @bank %>
-
-<br>
-
-<div>
-  <%= link_to t(:show), @bank %> |
-  <%= link_to t(:back), banks_path %>
-</div>
+<%= render "form", bank: @bank, action: :edit %>

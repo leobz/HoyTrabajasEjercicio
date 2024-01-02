@@ -1,0 +1,29 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name),  html: { class: "resource-form centered-30" }) do |f| %>
+<h2><%= t(:log_in)%></h2>
+  <%= f.label :email %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, autocomplete: "current-password" %>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="remember">
+      <div class="row">
+        <div class="col-2">
+          <%= f.check_box :remember_me %>
+        </div>
+        <div class="col-10">
+          <%= f.label :remember_me %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <br>
+  <div class="actions">
+    <%= f.submit t(:log_in), class: "btn btn-warning active" %>
+  </div>
+
+  <%= render "devise/shared/links" %>
+<% end %>
+

@@ -15,8 +15,8 @@
  */
 
 
-/*********** Form errors validation messages          ***********/
-/*********** See config/initializers/form_errors.rb   ***********/
+/*********************************  Form errors validation messages ****************/
+/* See config/initializers/form_errors.rb */
 .field p{
   margin-top: 0;
 }
@@ -25,4 +25,77 @@
 }
 .invalid{
   border: 1px solid red;
+}
+
+
+/*********************************  Forms *********************************/
+.resource-form{
+  position: relative;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.resource-form input {
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  height: 20px;
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+.resource-form label {
+  font-size: 12px;
+}
+.resource-form em{
+  font-size: 12px;
+}
+
+.resource-form .btn.btn-warning{
+  font-size: 14px;
+  height: auto;
+}
+
+.resource-form .btn.btn-primary{
+  font-size: 14px;
+  height: auto;
+}
+
+/* Remember option*/
+.resource-form .remember .row{
+  margin-top: 10px;
+}
+.resource-form .remember .col-10 {
+  margin-left: -20px;
+  margin-top: 2px;
+  font-size: 10px;
+}
+
+/* Shared link*/
+.shared-links{
+  font-size: 14px;
+}
+
+/*********************************  Common elements *********************************/
+.table {
+  margin-top: 10px;
+  max-width: 98%;
+  margin:auto;
+}
+
+.pagination {
+  display: flex;
+  justify-content: right;
+}
+
+.centered-30 {
+  top: 30%;
+}
+.centered-15 {
+  top: 15%;
 }

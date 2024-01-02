@@ -1,3 +1,4 @@
+<div class="resource-form centered-15">
 <div id="<%= dom_id provider %>">
   <p>
     <strong><%= t(:name) %>:</strong>
@@ -29,4 +30,11 @@
     <%= provider.account_number %>
   </p>
 
+</div>
+
+<div>
+  <%= link_to t(:edit), edit_provider_path(@provider) %> |
+  <%= link_to t(:back), providers_path %><br><br>
+  <%= button_to t(:delete), @provider, method: :delete, class: "btn btn-danger btn-sm" %>
+</div>
 </div>

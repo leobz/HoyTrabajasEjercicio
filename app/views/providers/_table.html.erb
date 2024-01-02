@@ -1,6 +1,6 @@
-
+<div class="border rounded">
 <% if @providers.size > 0%>
-  <table>
+  <table class="table">
     <tr>
       <th><%= t(:name) %></th>
       <th><%= t(:nit) %></th>
@@ -8,22 +8,30 @@
       <th><%= t(:contact_phone) %></th>
       <th><%= t(:bank_name) %></th>
       <th><%= t(:account_number) %></th>
+      <th></th>
+      <th></th>
     </tr>
 
     <% @providers.each do |p| %>
       <tr>
-        <td><%= p.name %></td>
+        <td><%= link_to p.name, p %></td>
         <td><%= p.nit %></td>
         <td><%= p.contact_name %></td>
         <td><%= p.contact_phone %></td>
         <td><%= p.bank_name %></td>
         <td><%= p.account_number %></td>
-        <td><%= button_to t(:show), p, method: :get %></td>
-        <td><%= button_to t(:edit), edit_bank_path(p), method: :get %></td>
-        <td><%= button_to t(:delete), p, method: :delete %></td>
+        <td>
+          <%=  button_to edit_provider_path(p), method: :get, class: "btn btn-warning btn-sm" do %>
+            <i class="fa fa-pencil" style="color:white;"></i>
+          <% end %>
+        <td>
+          <%=  button_to p, method: :delete, class: "btn btn-danger btn-sm" do %>
+            <i class="fa fa-trash" style="color:white;"></i>
+          <% end %>
       </tr>
     <% end %>
   </table>
 <% else %>
   Sin información en la tabla
 <% end%>
+</div>

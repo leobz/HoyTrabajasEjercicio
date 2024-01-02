@@ -1,4 +1,6 @@
-<%= form_with(model: provider) do |form| %>
+<%= form_with(model: provider, class: "resource-form centered-15") do |form| %>
+  <h2><%= "#{t(action)} #{t(:provider)}"%></h2>
+
   <% if provider.errors.any? %>
     <div style="color: red">
       <h2><%= t(:something_went_wrong)%></h2>
@@ -37,6 +39,13 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary active" %>
+  </div>
+
+  <div>
+    <% if action == :edit %>
+      <%= link_to t(:show), @provider %> |
+    <% end %>
+    <%= link_to t(:back), providers_path %>
   </div>
 <% end %>

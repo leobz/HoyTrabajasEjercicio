@@ -1,23 +1,49 @@
-<h2>Dashboard</h2>
+<p><h1>Dashboard</h1>
 
-<div style="display: flex; justify-content: space-between; width: 1600px;">
-  <div style="width: 800px;">
-    <% # TODO: Refactor with Presenters %>
-    <p><%= t(:amount_of_banks) %>: <%= Bank.count%></p>
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card bg-dark border-0 text-center text-white">
+      <div class="card-body">
+        <h4 class="card-title">
+          <% # TODO: Refactor with Presenters %>
+          <%= t(:amount_of_banks) %>:
+          <br /><%= Bank.count%>
+        </h4>
+      </div>
+    </div>
   </div>
-  <div style="width: 800px;">
-    <% # TODO: Refactor with Presenters %>
-    <p><%= t(:amount_of_providers) %>: <%= Provider.count%></p>
+
+  <div class="col-md-6">
+    <div class="card bg-dark border-0 text-center text-white">
+      <div class="card-body">
+        <h4 class="card-title">
+          <% # TODO: Refactor with Presenters %>
+          <%= t(:amount_of_providers) %>:
+          <br/><%= Provider.count%>
+        </h4>
+      </div>
+    </div>
   </div>
 </div>
 
-<div style="display: flex; justify-content: space-between; width: 1600px;">
-  <div style="width: 800px;">
-    <p><%= t(:amount_of_providers_per_bank)%></p>
-    <%= pie_chart providers_per_bank_path, id: "pie-chart", width: "100%", height: "500px" %>
+<br>
+<div class="row">
+  <div class="col-md-8 mb-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <p class="card-title"><%= t(:evolution_of_providers_resgistration_per_month)%></p>
+        <%= line_chart providers_resgistration_per_month_path, id: "line-chart", height: "500px" %>
+      </div>
+    </div>
   </div>
-  <div style="width: 800px;">
-    <p><%= t(:evolution_of_providers_resgistration_per_month)%></p>
-    <%= line_chart providers_resgistration_per_month_path, id: "line-chart", width: "100%", height: "500px" %>
+
+  <div class="col-md-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <p class="card-title"><%= t(:amount_of_providers_per_bank)%></p>
+        <%= pie_chart providers_per_bank_path, id: "pie-chart", height: "500px" %>
+      </div>
+    </div>
   </div>
 </div>
