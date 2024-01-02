@@ -1,0 +1,23 @@
+<h2>Dashboard</h2>
+
+<div style="display: flex; justify-content: space-between; width: 1600px;">
+  <div style="width: 800px;">
+    <% # TODO: Refactor with Presenters %>
+    <p><%= t(:amount_of_banks) %>: <%= Bank.count%></p>
+  </div>
+  <div style="width: 800px;">
+    <% # TODO: Refactor with Presenters %>
+    <p><%= t(:amount_of_providers) %>: <%= Provider.count%></p>
+  </div>
+</div>
+
+<div style="display: flex; justify-content: space-between; width: 1600px;">
+  <div style="width: 800px;">
+    <p><%= t(:amount_of_providers_per_bank)%></p>
+    <%= pie_chart providers_per_bank_path, id: "pie-chart", width: "100%", height: "500px" %>
+  </div>
+  <div style="width: 800px;">
+    <p><%= t(:evolution_of_providers_resgistration_per_month)%></p>
+    <%= line_chart providers_resgistration_per_month_path, id: "line-chart", width: "100%", height: "500px" %>
+  </div>
+</div>
