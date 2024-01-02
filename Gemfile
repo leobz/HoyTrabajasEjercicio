@@ -57,6 +57,7 @@ gem "groupdate"
 
 # Authentication
 gem 'devise'
+gem 'devise-i18n'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
