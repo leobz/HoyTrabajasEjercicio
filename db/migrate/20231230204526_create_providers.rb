@@ -7,6 +7,8 @@ class CreateProviders < ActiveRecord::Migration[7.0]
       t.string :contact_phone
       t.integer :bank_id
       t.string :account_number
+
+      t.timestamps
     end
   end
 end

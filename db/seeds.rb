@@ -99,13 +99,18 @@ providers_names = [
 ]
 
 providers_names.each_with_index do |name, index|
+  # Random datetime between now and 1 year ago
+  datetime = Time.now - rand(365).days
+
   attributes = {
     name: name,
     nit: "#{100000000 + index}-0",
     contact_name: "Person #{index}",
     contact_phone: "+54 11 #{index}",
     account_number: "00000000#{index}",
-    bank_id: Bank.all.map{|b| b.id}.sample  # Chooses random bank
+    bank_id: Bank.all.map{|b| b.id}.sample,  # Chooses random bank
+    created_at: datetime,
+    updated_at: datetime
   }
 
   Provider.create! attributes
