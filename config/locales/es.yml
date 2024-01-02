@@ -1,4 +1,39 @@
 es:
+#*************************** Errors
+  errors:
+    messages:
+      format: "%{attribute} %{message}"
+      messages:
+      accepted: "debe ser aceptado"
+      blank: "no puede estar en blanco"
+      confirmation: "no coincide"
+      empty: "no puede estar vacío"
+      equal_to: "debe ser igual a %{count}"
+      even: "debe ser un número par"
+      exclusion: "está reservado"
+      greater_than: "debe ser mayor que %{count}"
+      greater_than_or_equal_to: "debe ser mayor o igual que %{count}"
+      inclusion: "no está incluido en la lista"
+      invalid: "es inválido"
+      less_than: "debe ser menor que %{count}"
+      less_than_or_equal_to: "debe ser menor o igual que %{count}"
+      model_invalid: "La validación falló: %{errors}"
+      not_a_number: "no es un número"
+      not_an_integer: "debe ser un entero"
+      odd: "debe ser un número non"
+      other_than: "debe ser diferente a %{count}"
+      present: "debe estar en blanco"
+      required: "debe existir"
+      taken: "ya ha sido tomado"
+      too_long:
+        one: "es demasiado largo (máximo 1 caracter)"
+        other: "es demasiado largo (máximo %{count} caracteres)"
+      too_short:
+        one: "es demasiado corto (mínimo 1 caracter)"
+        other: "es demasiado corto (mínimo %{count} caracteres)"
+      wrong_length:
+        one: "longitud errónea (debe ser de 1 caracter)"
+        other: "longitud errónea (debe ser de %{count} caracteres)"
 #*************************** Kaminari Pagination menu
   views:
     pagination:
@@ -23,7 +58,6 @@ es:
   back: "Volver"
   new: "Nuevo"
   name: "Nombre"
-
   successful_created: "%{model} creada/o con éxito"
   successful_updated: "%{model} actualizada/o con éxito"
   successful_deleted: "%{model} eliminada/o con éxito"

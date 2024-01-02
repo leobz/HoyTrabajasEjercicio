@@ -1,4 +1,5 @@
 class ChartsController < ApplicationController
+  before_action :authenticate_user!
 
   def providers_resgistration_per_month
     render json: Provider.group_by_month(:created_at).count
