@@ -1,14 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<p><h1><%= t(:banks) %></h1>
 
-<h1><%= t(:banks) %></h1>
+<br>
+<%= button_to new_bank_path, method: :get, class: "btn btn-primary" do %>
+  <i class="fa fa-plus-circle" style="color:white;"></i>&nbsp;<%= t(:new) %>
+<% end %>
 
-<div id="banks">
-  <% @banks.each do |bank| %>
-    <%= render bank %>
-    <p>
-      <%= link_to t(:show), bank %>
-    </p>
-  <% end %>
+
+<p><div id="banks">
+  <%= render "table", banks: @banks %>
 </div>
-
-<%= link_to t(:new), new_bank_path %>

@@ -1,0 +1,27 @@
+<div class="border rounded">
+<% if @banks.size > 0%>
+  <table class="table">
+    <tr>
+      <th><%= t(:name) %></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @banks.each do |b| %>
+      <tr>
+        <td><%= link_to b.name, b %></td>
+        <td>
+          <%=  button_to edit_bank_path(b), method: :get, class: "btn btn-warning btn-sm" do %>
+            <i class="fa fa-pencil" style="color:white;"></i>
+          <% end %>
+        <td>
+          <%=  button_to b, method: :delete, class: "btn btn-danger btn-sm" do %>
+            <i class="fa fa-trash" style="color:white;"></i>
+          <% end %>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  Sin información en la tabla
+<% end%>
+</div>

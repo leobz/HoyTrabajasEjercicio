@@ -1,12 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<p><h1><%= t(:providers) %></h1>
 
-<h1><%= t(:providers) %></h1>
+<br>
+<%= button_to new_provider_path, method: :get, class: "btn btn-primary" do %>
+  <i class="fa fa-plus-circle" style="color:white;"></i>&nbsp;<%= t(:new) %>
+<% end %>
 
-<%= link_to t(:new), new_provider_path %>
 <p>
 <div id="providers">
   <%= render "table", providers: @providers %>
 </div>
 <p>
 
-<%= paginate @providers %>
+<div class="pagination">
+  <%= paginate @providers %>
+</div>
