@@ -55,6 +55,9 @@ gem "chartkick"
 # Group temporal data
 gem "groupdate"
 
+# Authentication
+gem 'devise'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
