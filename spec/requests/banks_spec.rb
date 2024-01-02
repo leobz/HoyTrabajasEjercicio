@@ -1,7 +1,12 @@
 require "rails_helper"
+require "support_helper"
 
 RSpec.describe "Bank Requests", type: :request do
   let(:valid_attributes) {{name: "My bank"}}
+
+  before(:each) do
+    sign_in_test_user()
+  end
 
   describe "GET #index" do
     it "returns a list of banks" do

@@ -14,3 +14,16 @@ end
 def create_test_bank()
   Bank.create!(name: SecureRandom.urlsafe_base64(10))
 end
+
+# Creates a User with defaults attributes
+def create_test_user()
+  User.create!({
+    email: "user@example.com",
+    password: "password"
+  })
+end
+
+# Creates a user and sign in
+def sign_in_test_user()
+  sign_in create_test_user()
+end

@@ -1,8 +1,13 @@
 require "rails_helper"
+require "support_helper"
 
 RSpec.describe "Provider Requests", type: :request do
   before(:each) do
     @bank = Bank.create! name: "My bank"
+  end
+
+  before(:each) do
+    sign_in_test_user()
   end
 
   let(:valid_attributes) {

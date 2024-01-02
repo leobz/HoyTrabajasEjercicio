@@ -1,8 +1,11 @@
 require "rails_helper"
 require "support_helper"
 
-
 RSpec.describe "Charts Requests", type: :request do
+  before(:each) do
+    sign_in_test_user()
+  end
+
   describe "GET #providers_per_bank" do
     it "it's successful" do
       b1 = Bank.create! name: "b1"
