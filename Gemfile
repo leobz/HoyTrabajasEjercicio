@@ -49,6 +49,12 @@ gem 'rails-controller-testing'
 # Pagination
 gem 'kaminari'
 
+# Dashboard Charts
+gem "chartkick"
+
+# Group temporal data
+gem "groupdate"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

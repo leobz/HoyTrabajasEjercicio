@@ -1,0 +1,16 @@
+# Creates a Provider with defaults attributes
+def create_test_provider(bank = create_test_bank(), name = "Test Provider")
+  Provider.create!({
+    nit: "100000000-0",
+    name: name,
+    contact_name: "Test Person",
+    contact_phone: nil, # optional field
+    account_number: nil, # optional field
+    bank_id: bank.id
+  })
+end
+
+# Creates a Bank with random name
+def create_test_bank()
+  Bank.create!(name: SecureRandom.urlsafe_base64(10))
+end
