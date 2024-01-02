@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   resources :providers do
     get '/page/:page', action: :index, on: :collection
   end
+
+  scope :charts do
+    get 'providers_resgistration_per_month', to: 'charts#providers_resgistration_per_month'
+    get 'providers_per_bank', to: 'charts#providers_per_bank'
+  end
 end
