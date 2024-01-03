@@ -61,4 +61,4 @@ es:
   successful_created: "%{model} creada/o con éxito"
   successful_updated: "%{model} actualizada/o con éxito"
   successful_deleted: "%{model} eliminada/o con éxito"
-  something_went_wrong: "Alguo salió mal"
+  something_went_wrong: "Algo salió mal"

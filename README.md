@@ -4,7 +4,18 @@
 ```bash
 docker compose build
 docker compose up
-``````
+```
+
+## Develompent
+```bash
+bundle install
+rails server
+```
+
+## Run tests
+```bash
+rspec spec
+```
 
 ## Screenshots
 ![dashboard](https://github.com/leobz/HoyTrabajasEjercicio/assets/43507646/fff106ff-f8e7-4e77-adee-2560dc1b7cec)
