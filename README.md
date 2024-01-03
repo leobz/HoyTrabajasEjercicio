@@ -6,6 +6,18 @@ docker compose build
 docker compose up
 ```
 
+## Stop service
+Stop the container with Ctrl + C or, in another tab with
+```bash
+docker compose stop
+```
+
+## Down service
+Delete the container with
+```bash
+docker compose stop
+```
+
 ## Develompent
 ```bash
 bundle install
