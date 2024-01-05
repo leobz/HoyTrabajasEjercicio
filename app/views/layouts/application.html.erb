@@ -1,7 +1,9 @@
+<% presenter = ApplicationPresenter.new(self) %>
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hoytrabajas</title>
+    <title>Hoy Trabajas</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -52,15 +54,9 @@
 
 
     <!----------------------------- Flash messages  -------------------------------->
-    <% flash.each do |key, value| %>
-        <div class="alert <%= flash_class(key) %> alert-dismissible fade show">
-          <strong>  <%= value %> </strong>
-          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
-    <% end %>
+    <% presenter.flash_messages %>
 
-
-
+    <!----------------------------- Yield content  -------------------------------->
     <div class="row justify-content-center">
       <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-11 col-sm-12">
         <%= yield %>
